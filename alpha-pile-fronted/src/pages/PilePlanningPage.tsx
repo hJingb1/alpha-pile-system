@@ -53,11 +53,25 @@ const PilePlanningPage: React.FC = () => {
 
   const [showScheduleTable, setShowScheduleTable] = useState<boolean>(false);
 
+  // 构建完整的视频URL（处理相对路径）
+  const fullVideoUrl = useMemo(() => {
+    if (!videoUrl) return null;
+    // 如果已经是完整URL（以http开头），直接使用
+    if (videoUrl.startsWith('http')) return videoUrl;
+    // 否则，拼接后端API URL
+    const apiBaseUrl = import.meta.env.VITE_API_URL || '/';
+    // 确保URL格式正确（移除多余的斜杠）
+    const baseUrl = apiBaseUrl.endsWith('/') ? apiBaseUrl.slice(0, -1) : apiBaseUrl;
+    const path = videoUrl.startsWith('/') ? videoUrl : `/${videoUrl}`;
+    return `${baseUrl}${path}`;
+  }, [videoUrl]);
+
   useEffect(() => {
     if (videoUrl) {
-      console.log("Video URL to play/download:", videoUrl);
+      console.log("Original video URL:", videoUrl);
+      console.log("Full video URL to play/download:", fullVideoUrl);
     }
-  }, [videoUrl]);
+  }, [videoUrl, fullVideoUrl]);
 
   const availablePileTypes = useMemo(() => { // 使用 useMemo
     return new Set(pileData.map(p => p.type));
@@ -489,14 +503,14 @@ const PilePlanningPage: React.FC = () => {
                     <Spin tip={currentOptimizationTaskId || "视频生成中..."} />
                 </div>
             )}
-            {videoUrl && !isVideoGenerating && !videoError && (
+            {fullVideoUrl && !isVideoGenerating && !videoError && (
                 <Card title="施工动画预览" style={{ marginTop: 16 }} bordered={false}>
-                    <video width="100%" height="auto" controls key={videoUrl}>
-                        <source src={videoUrl} type="video/mp4" />
-                        您的浏览器不支持HTML5视频。您可以 <a href={videoUrl} download target="_blank" rel="noopener noreferrer">点击这里下载视频</a>。
+                    <video width="100%" height="auto" controls key={fullVideoUrl}>
+                        <source src={fullVideoUrl} type="video/mp4" />
+                        您的浏览器不支持HTML5视频。您可以 <a href={fullVideoUrl} download target="_blank" rel="noopener noreferrer">点击这里下载视频</a>。
                     </video>
                     <div style={{marginTop: 8, textAlign: 'center'}}>
-                        <a href={videoUrl} download target="_blank" rel="noopener noreferrer">
+                        <a href={fullVideoUrl} download target="_blank" rel="noopener noreferrer">
                             <Button icon={<DownloadOutlined />}>下载视频文件</Button>
                         </a>
                     </div>
