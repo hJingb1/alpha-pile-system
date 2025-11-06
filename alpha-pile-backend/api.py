@@ -36,8 +36,9 @@ app.mount(f"/{GENERATED_VIDEOS_DIR_NAME}", StaticFiles(directory=GENERATED_VIDEO
 origins = [
     "http://localhost:5173",  # 前端开发服务器地址
     "http://127.0.0.1:5173",
-    # 如果部署到生产环境，添加你的生产前端域名
-    # "https://your-frontend-domain.com",
+    "http://localhost",
+    "https://perpetual-serenity-production.up.railway.app",  # Railway 前端域名
+    "*",  # 临时允许所有来源（生产环境建议只允许特定域名）
 ]
 
 app.add_middleware(
