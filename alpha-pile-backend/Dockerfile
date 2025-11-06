@@ -4,11 +4,14 @@ FROM python:3.10-slim
 # 设置工作目录
 WORKDIR /app
 
-# 安装系统依赖 (OR-Tools 需要) 和 ffmpeg (视频生成需要)
+# 安装系统依赖 (OR-Tools 需要)、ffmpeg (视频生成需要) 和中文字体
 RUN apt-get update && apt-get install -y \
     gcc \
     g++ \
     ffmpeg \
+    fonts-noto-cjk \
+    fontconfig \
+    && fc-cache -f -v \
     && rm -rf /var/lib/apt/lists/*
 
 # 复制依赖文件

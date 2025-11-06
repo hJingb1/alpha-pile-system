@@ -171,7 +171,9 @@ def main(input_filepath, output_filepath):
 
     # 降低图像分辨率以减少内存占用
     fig, ax = plt.subplots(figsize=(12, 8))  # 从(12, 8)降低到(10, 6)
-    plt.rcParams['font.sans-serif'] = ['SimHei']
+
+    # 配置中文字体（使用 Noto Sans CJK，Docker 容器中已安装）
+    plt.rcParams['font.sans-serif'] = ['Noto Sans CJK SC', 'Noto Sans CJK TC', 'SimHei', 'DejaVu Sans']
     plt.rcParams['axes.unicode_minus'] = False
 
     # 减少帧数以降低内存和处理需求
