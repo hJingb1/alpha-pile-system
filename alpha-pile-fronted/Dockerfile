@@ -17,6 +17,10 @@ RUN npm config set registry https://registry.npmmirror.com && \
 # 复制源代码
 COPY . .
 
+# 声明构建参数（从 Railway 环境变量传入）
+ARG VITE_API_URL
+ENV VITE_API_URL=$VITE_API_URL
+
 # 构建生产版本
 RUN npm run build
 
