@@ -102,8 +102,8 @@ interface SolverStatisticsApi {
 
 // 配置 Axios 实例
 const apiClient = axios.create({
-  baseURL: '/', // 使用 Vite 代理时，指向 Vite 开发服务器
-  timeout: 60000, // 请求超时时间（毫秒），可以适当延长用于长轮询或初始请求
+  baseURL: import.meta.env.VITE_API_URL || '/', // 生产环境使用环境变量，开发环境使用代理
+  timeout: 600000, // 10分钟超时（优化计算可能需要较长时间）
   headers: {
     'Content-Type': 'application/json',
   }
