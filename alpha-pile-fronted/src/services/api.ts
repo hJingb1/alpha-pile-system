@@ -101,8 +101,12 @@ interface SolverStatisticsApi {
 
 
 // 配置 Axios 实例
+const API_BASE_URL = import.meta.env.VITE_API_URL || '/';
+console.log('[API Config] VITE_API_URL:', import.meta.env.VITE_API_URL);
+console.log('[API Config] Using baseURL:', API_BASE_URL);
+
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/', // 生产环境使用环境变量，开发环境使用代理
+  baseURL: API_BASE_URL, // 生产环境使用环境变量，开发环境使用代理
   timeout: 600000, // 10分钟超时（优化计算可能需要较长时间）
   headers: {
     'Content-Type': 'application/json',
