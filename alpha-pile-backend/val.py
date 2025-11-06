@@ -3,6 +3,10 @@ import sys
 import os
 import argparse
 
+# 在导入 matplotlib 之前设置后端（避免显示问题）
+import matplotlib
+matplotlib.use('Agg')  # 必须在导入 pyplot 之前设置
+
 # 设置标准输出编码为UTF-8（Windows兼容）
 if sys.platform.startswith('win'):
     import codecs
@@ -67,11 +71,9 @@ try:
     import matplotlib.patches as patches
     import numpy as np
     import math
-    
-    # 配置matplotlib后端
-    plt.switch_backend('Agg')  # 使用非交互式后端
-    print("[OK] matplotlib 后端配置成功")
-    
+
+    print("[OK] matplotlib 组件导入成功")
+
 except Exception as e:
     print(f"[ERROR] 导入matplotlib组件失败: {e}")
     sys.exit(1)
