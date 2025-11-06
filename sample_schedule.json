@@ -1,0 +1,182 @@
+[
+  {
+    "pile_id": "1",
+    "x": 0,
+    "y": 0,
+    "start_hour": 0,
+    "end_hour": 6,
+    "machine": 1,
+    "diameter": 1.0
+  },
+  {
+    "pile_id": "2",
+    "x": 0,
+    "y": 8,
+    "start_hour": 0,
+    "end_hour": 7,
+    "machine": 2,
+    "diameter": 1.2
+  },
+  {
+    "pile_id": "3",
+    "x": 0,
+    "y": 16,
+    "start_hour": 0,
+    "end_hour": 8,
+    "machine": 3,
+    "diameter": 1.4
+  },
+  {
+    "pile_id": "4",
+    "x": 0,
+    "y": 24,
+    "start_hour": 8,
+    "end_hour": 17,
+    "machine": 1,
+    "diameter": 1.0
+  },
+  {
+    "pile_id": "5",
+    "x": 0,
+    "y": 32,
+    "start_hour": 9,
+    "end_hour": 19,
+    "machine": 2,
+    "diameter": 1.2
+  },
+  {
+    "pile_id": "6",
+    "x": 10,
+    "y": 0,
+    "start_hour": 10,
+    "end_hour": 21,
+    "machine": 3,
+    "diameter": 1.4
+  },
+  {
+    "pile_id": "7",
+    "x": 10,
+    "y": 8,
+    "start_hour": 19,
+    "end_hour": 31,
+    "machine": 1,
+    "diameter": 1.0
+  },
+  {
+    "pile_id": "8",
+    "x": 10,
+    "y": 16,
+    "start_hour": 21,
+    "end_hour": 27,
+    "machine": 2,
+    "diameter": 1.2
+  },
+  {
+    "pile_id": "9",
+    "x": 10,
+    "y": 24,
+    "start_hour": 23,
+    "end_hour": 30,
+    "machine": 3,
+    "diameter": 1.4
+  },
+  {
+    "pile_id": "10",
+    "x": 10,
+    "y": 32,
+    "start_hour": 29,
+    "end_hour": 37,
+    "machine": 2,
+    "diameter": 1.0
+  },
+  {
+    "pile_id": "11",
+    "x": 20,
+    "y": 0,
+    "start_hour": 32,
+    "end_hour": 41,
+    "machine": 3,
+    "diameter": 1.2
+  },
+  {
+    "pile_id": "12",
+    "x": 20,
+    "y": 8,
+    "start_hour": 33,
+    "end_hour": 43,
+    "machine": 1,
+    "diameter": 1.4
+  },
+  {
+    "pile_id": "13",
+    "x": 20,
+    "y": 16,
+    "start_hour": 39,
+    "end_hour": 50,
+    "machine": 2,
+    "diameter": 1.0
+  },
+  {
+    "pile_id": "14",
+    "x": 20,
+    "y": 24,
+    "start_hour": 43,
+    "end_hour": 55,
+    "machine": 3,
+    "diameter": 1.2
+  },
+  {
+    "pile_id": "15",
+    "x": 20,
+    "y": 32,
+    "start_hour": 45,
+    "end_hour": 51,
+    "machine": 1,
+    "diameter": 1.4
+  },
+  {
+    "pile_id": "16",
+    "x": 30,
+    "y": 0,
+    "start_hour": 52,
+    "end_hour": 59,
+    "machine": 2,
+    "diameter": 1.0
+  },
+  {
+    "pile_id": "17",
+    "x": 30,
+    "y": 8,
+    "start_hour": 53,
+    "end_hour": 61,
+    "machine": 1,
+    "diameter": 1.2
+  },
+  {
+    "pile_id": "18",
+    "x": 30,
+    "y": 16,
+    "start_hour": 57,
+    "end_hour": 66,
+    "machine": 3,
+    "diameter": 1.4
+  },
+  {
+    "pile_id": "19",
+    "x": 30,
+    "y": 24,
+    "start_hour": 61,
+    "end_hour": 71,
+    "machine": 2,
+    "diameter": 1.0
+  },
+  {
+    "pile_id": "20",
+    "x": 30,
+    "y": 32,
+    "start_hour": 63,
+    "end_hour": 74,
+    "machine": 1,
+    "diameter": 1.2
+  }
+]

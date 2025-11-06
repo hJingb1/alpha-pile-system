@@ -1,0 +1,39 @@
+{
+    "name": "alpha-pile-frontend",
+    "private": true,
+    "version": "0.1.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@types/papaparse": "^5.3.16",
+        "antd": "^5.16.0",
+        "axios": "^1.6.8",
+        "papaparse": "^5.5.2",
+        "prop-types": "^15.8.1",
+        "react": "^18.2.0",
+        "react-csv": "^2.2.2",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.22.3",
+        "xlsx": "^0.18.5"
+    },
+    "devDependencies": {
+        "@types/node": "^20.12.7",
+        "@types/react": "^18.2.66",
+        "@types/react-csv": "^1.1.10",
+        "@types/react-dom": "^18.2.22",
+        "@typescript-eslint/eslint-plugin": "^7.2.0",
+        "@typescript-eslint/parser": "^7.2.0",
+        "@vitejs/plugin-react": "^4.2.1",
+        "eslint": "^8.57.0",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-react-refresh": "^0.4.6",
+        "sass": "^1.88.0",
+        "typescript": "^5.2.2",
+        "vite": "^6.3.5"
+    }
+}

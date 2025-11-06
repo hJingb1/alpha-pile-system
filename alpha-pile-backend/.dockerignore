@@ -1,0 +1,39 @@
+# Python 相关
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# 虚拟环境
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 数据文件 (可选,如果数据文件很大)
+*.xlsx
+*.csv
+*.xls
+
+# 日志和临时文件
+*.log
+*.tmp
+.DS_Store
+
+# 生成的视频文件
+generated_videos/
+*.mp4
+*.gif
+
+# Git
+.git/
+.gitignore

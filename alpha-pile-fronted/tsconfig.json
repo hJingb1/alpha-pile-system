@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+      "target": "ES2020", // 编译目标 ES 版本
+      "useDefineForClassFields": true, // 使用标准方式定义类字段
+      "lib": ["ES2020", "DOM", "DOM.Iterable"], // 可用的库定义
+      "module": "ESNext", // 使用 ES Modules
+      "skipLibCheck": true, // 跳过对库文件 (.d.ts) 的类型检查，加快编译速度
+  
+      /* Bundler mode */
+      "moduleResolution": "bundler", // 模块解析策略，Vite 推荐
+      "allowImportingTsExtensions": true, // 允许导入 .ts/.tsx 文件（Vite需要）
+      "resolveJsonModule": true, // 允许导入 JSON 文件
+      "isolatedModules": true, // 每个文件作为单独模块处理（Vite/Babel要求）
+      "noEmit": true, // 不实际输出 JS 文件（由 Vite 处理编译和打包）
+      "jsx": "react-jsx", // 使用 React 17+ 的新 JSX 转换
+  
+      /* Linting */
+      "strict": true, // 启用所有严格类型检查选项
+      "noUnusedLocals": true, // 检查未使用的局部变量
+      "noUnusedParameters": true, // 检查未使用的参数
+      "noFallthroughCasesInSwitch": true, // 不允许 switch 语句 case 穿透
+      "forceConsistentCasingInFileNames": true, // 强制文件名大小写一致
+  
+      /* Crucial for React/CommonJS interop */
+      "esModuleInterop": true, // 允许默认导入 CommonJS 模块 (解决之前的 React 导入问题)
+      "allowSyntheticDefaultImports": true // 允许从没有默认导出的模块进行默认导入（通常与 esModuleInterop 一起使用）
+    },
+    "include": ["src"], // 指定需要编译的文件夹
+    // 引用另一个 tsconfig 文件，用于配置 Node.js 环境（如 vite.config.ts）
+    "references": [{ "path": "./tsconfig.node.json" }] 
+  }
