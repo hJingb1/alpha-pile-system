@@ -14,9 +14,7 @@ import {
   triggerVideoGenerationApi,
   ScheduleRequestData,
   TaskResponseApi,
-  TaskStatusResponseApi,
   OptimizationResultData, // 确保从 api.ts 导出
-  VideoGenerationResponseApi,
 } from '../services/api';
 
 // --- 类型定义 ---

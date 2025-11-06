@@ -1,5 +1,5 @@
 // src/pages/PilePlanningPage.tsx
-import React, { useState, useMemo, useCallback, MouseEvent as ReactMouseEvent, useEffect } from 'react'; // 确保导入了 MouseEvent 和 useEffect
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import {
   Button,
   Row,

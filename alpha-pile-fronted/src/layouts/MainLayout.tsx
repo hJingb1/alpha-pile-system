@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import {
-  DesktopOutlined,
   FileOutlined,
-  PieChartOutlined,
-  TeamOutlined,
-  UserOutlined,
-  SettingOutlined,
-  CloudUploadOutlined,
   ProjectOutlined,
   LineChartOutlined,
 } from '@ant-design/icons';
@@ -15,7 +9,7 @@ import type { MenuProps } from 'antd';
 import { Layout, Menu, theme, Avatar } from 'antd';
 import './MainLayout.css'; // For custom layout styling
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Footer, Sider } = Layout;
 
 // Map pathnames to menu keys
 const pathToKeyMap: { [key: string]: string } = {
