@@ -199,6 +199,24 @@ def run_animation_generation(optimization_task_id: str, schedule_data_path: str,
         print(f"STDOUT长度: {len(process.stdout) if process.stdout else 0}")
         print(f"STDERR长度: {len(process.stderr) if process.stderr else 0}")
 
+        # 检查输出文件
+        print(f"检查输出文件是否存在: {output_video_abs_path}")
+        print(f"文件存在: {os.path.exists(output_video_abs_path)}")
+        if os.path.exists(output_video_abs_path):
+            file_size = os.path.getsize(output_video_abs_path)
+            print(f"文件大小: {file_size} 字节")
+
+        # 列出目录内容
+        print(f"目录 {video_output_dir} 的内容:")
+        try:
+            files = os.listdir(video_output_dir)
+            for f in files:
+                full_path = os.path.join(video_output_dir, f)
+                size = os.path.getsize(full_path) if os.path.isfile(full_path) else "DIR"
+                print(f"  - {f} ({size})")
+        except Exception as e:
+            print(f"  列出目录失败: {e}")
+
         if process.returncode == 0:
             # Video generation successful
             if os.path.exists(output_video_abs_path):

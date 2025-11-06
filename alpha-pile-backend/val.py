@@ -360,9 +360,17 @@ def main(input_filepath, output_filepath):
             extra_args=['-vcodec', 'libx264', '-preset', 'ultrafast', '-crf', '28']  # 快速编码，较低质量
         )
         ani.save(output_filepath, writer=writer, dpi=100)  # 从150降低到100
-        if 'progress_bar' in locals(): 
+        if 'progress_bar' in locals():
             progress_bar.close()
         print(f"[OK] 动画已保存到 '{output_filepath}'")
+
+        # 清理内存
+        plt.close(fig)
+        del ani
+        import gc
+        gc.collect()
+        print("[INFO] 视频生成成功，内存已清理")
+        return  # 成功后退出
         
     except (subprocess.CalledProcessError, BrokenPipeError, OSError) as e:
         if 'progress_bar' in locals(): 
@@ -406,8 +414,15 @@ def main(input_filepath, output_filepath):
             print(f"[INFO] 已保存静态图: {static_path}")
         except Exception as static_e:
             print(f"[ERROR] 保存静态图也失败: {static_e}")
-        
+
         sys.exit(1)
+
+    finally:
+        # 清理内存，关闭所有图形
+        plt.close('all')
+        import gc
+        gc.collect()
+        print("[INFO] 内存已清理")
 
 if __name__ == '__main__':
     # --- 使用 argparse 解析命令行参数 ---
